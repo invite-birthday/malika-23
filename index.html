@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Приглашение</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&family=Shantell+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="crayon" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="2" seed="4" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="3" result="d"/>
+    <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1 1.35" result="grain"/>
+    <feComposite in="d" in2="grain" operator="in"/>
+  </filter>
+</svg>
+
+<!-- Обложка -->
+<section class="cover" id="cover">
+  <div class="col">
+    <h1 class="title cover-title" data-lines="coverTitle"></h1>
+    <div class="cover-art">
+      <i class="deco bow" style="left:-30%;top:-6%;width:24%"></i>
+      <i class="deco bow" style="right:-34%;top:32%;width:24%"></i>
+      <i class="deco bow" style="left:-34%;top:66%;width:21%"></i>
+      <i class="deco spark" style="left:-24%;top:42%;width:10%"></i>
+      <i class="deco spark" style="right:-22%;top:74%;width:9%"></i>
+      <i class="deco spark" style="right:-26%;top:-16%;width:7%"></i>
+      <div class="scallop">
+        <div class="ph"><img data-photo="cover" alt=""></div>
+        <i class="deco hat cover-hat"></i>
+      </div>
+    </div>
+    <button class="btn" id="open" data-text="openButton"></button>
+  </div>
+</section>
+
+<main>
+  <!-- Первый экран -->
+  <section class="hero">
+    <div class="col">
+      <h2 class="title hero-title reveal" data-lines="heroTitle"></h2>
+      <div class="hero-art reveal">
+        <span class="big-num" data-text="age"></span>
+        <i class="deco bow" style="left:2%;top:-4%;width:15%"></i>
+        <i class="deco bow" style="right:-2%;top:-22%;width:14%"></i>
+        <i class="deco bow" style="right:-4%;top:36%;width:12%"></i>
+        <i class="deco bow" style="left:5%;top:56%;width:13%"></i>
+        <i class="deco spark" style="left:7%;top:40%;width:6%"></i>
+        <i class="deco spark" style="right:4%;top:46%;width:5%"></i>
+        <i class="deco spark" style="right:8%;top:72%;width:5%"></i>
+        <div class="hero-photo"><div class="ph"><img data-photo="hero" alt=""></div></div>
+        <i class="deco hat hero-hat"></i>
+        <i class="deco cake hero-cake"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Цитата и музыка -->
+  <section class="quote">
+    <div class="col">
+      <p class="text reveal" data-text="quote"></p>
+      <p class="text reveal" data-text="quoteAuthor"></p>
+      <div class="player reveal" id="player">
+        <div class="player-thumb ph"><img data-photo="thumb" alt=""></div>
+        <div class="player-body">
+          <div class="bar" id="bar"><span id="barFill"></span></div>
+          <div class="times"><span id="tCur">00:00</span><span id="tDur">00:00</span></div>
+          <div class="controls">
+            <button id="back" aria-label="Назад 10 секунд"><svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
+            <button id="play" aria-label="Играть"><svg viewBox="0 0 24 24"><path id="playIcon" d="M6 4l15 8-15 8z"/></svg></button>
+            <button id="fwd" aria-label="Вперёд 10 секунд"><svg viewBox="0 0 24 24"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <p class="text small reveal" id="musicHint" data-text="musicHint"></p>
+      <audio id="audio" preload="metadata" loop></audio>
+    </div>
+  </section>
+
+  <!-- Приглашение -->
+  <section class="invite">
+    <div class="col">
+      <div class="text big reveal" data-paras="inviteText"></div>
+      <h2 class="title name reveal" data-text="name"></h2>
+      <div class="portrait reveal">
+        <i class="deco bow portrait-bow"></i>
+        <i class="deco spark" style="right:-12%;top:8%;width:9%"></i>
+        <i class="deco bow" style="left:-24%;top:36%;width:17%"></i>
+        <i class="deco bow" style="right:-24%;top:58%;width:17%"></i>
+        <i class="deco spark" style="left:-14%;bottom:6%;width:9%"></i>
+        <div class="portrait-frame"><div class="ph"><img data-photo="portrait" alt=""></div></div>
+        <p class="portrait-caption" data-text="portraitCaption"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Save the date -->
+  <section class="save">
+    <div class="col">
+      <div class="save-head reveal">
+        <i class="deco disco"></i>
+        <h2 class="title save-title" data-text="saveTheDate"></h2>
+      </div>
+    </div>
+    <div class="calendar reveal" id="calendar"></div>
+    <div class="col">
+      <h2 class="title event-title reveal" data-lines="eventTitle"></h2>
+      <p class="text big bold reveal"><span id="dateLine"></span><br><span data-text="timeNote"></span></p>
+      <p class="text big bold reveal"><span data-text="venueName"></span><br><span class="normal" data-text="venueAddress"></span></p>
+      <a class="btn reveal" id="map" target="_blank" rel="noopener" data-text="mapButton"></a>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="rsvp" id="rsvp" hidden>
+    <div class="col">
+      <div class="rsvp-card reveal">
+        <h2 data-text="rsvpTitle"></h2>
+        <p id="rsvpDate"></p>
+        <p class="rsvp-venue"><b data-text="venueName"></b><br><span data-text="venueAddress"></span></p>
+        <div class="rsvp-btns">
+          <a id="rsvpYes" target="_blank" rel="noopener"><span>✓</span><em data-text="rsvpYes"></em></a>
+          <a id="rsvpNo" target="_blank" rel="noopener"><span>✕</span><em data-text="rsvpNo"></em></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- История -->
+  <section class="story">
+    <div class="col">
+      <h2 class="title event-title reveal" data-text="storyTitle"></h2>
+      <div class="text reveal" data-paras="story"></div>
+    </div>
+  </section>
+
+  <!-- До встречи -->
+  <section class="bye">
+    <div class="col">
+      <div class="bye-left reveal">
+        <h2 class="title bye-title"><span data-text="seeYou"></span><br><span id="shortDate"></span></h2>
+        <div class="countdown" id="countdown"></div>
+      </div>
+      <div class="strip" id="strip"></div>
+      <i class="deco cake bye-cake"></i>
+    </div>
+  </section>
+</main>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
