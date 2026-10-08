@@ -31,7 +31,7 @@ window.INVITE = {
   eventTitle: ['Уютная', 'вечеринка'],
   timeNote: '18:00',
   venueName: 'САНКТ-ПЕТЕРБУРГ',
-  venueAddress: 'Захарьевская ул.',
+  venueAddress: 'Захарьевская ул. 7',
   mapButton: 'Показать на карте',
   mapUrl: 'https://www.google.com/maps/place/%D0%97%D0%B0%D1%85%D0%B0%D1%80%D1%8C%D0%B5%D0%B2%D1%81%D0%BA%D0%B0%D1%8F+%D1%83%D0%BB.,+7,+%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3,+%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F,+191123/@59.9474089,30.3518042,19z/data=!4m6!3m5!1s0x46963175d4178211:0x3b5bed7d63fa745b!8m2!3d59.9474183!4d30.3516754!16s%2Fg%2F11cnd7n87f?entry=ttu&g_ep=EgoyMDI2MTAwNS4wIKXMDSoASAFQAw%3D%3D',
 
